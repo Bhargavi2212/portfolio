@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bhargavi Nallapuneni — AI/ML Engineer</title>
+<meta name="description" content="AI/ML Engineer shipping one production-grade AI/ML system per week. Co-founder at Haber Solutions, currently at Intuit. Building at the intersection of engineering and business value." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=JetBrains+Mono:wght@400;500;600&family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --paper: #f4f1ea;
+    --paper-2: #ebe6d8;
+    --paper-3: #e2dccb;
+    --ink: #141414;
+    --ink-soft: #3a3a3a;
+    --ink-mute: #7a7367;
+    --accent: #c43c1e;
+    --accent-2: #e85d3d;
+    --rule: #141414;
+    --rule-soft: #c9c3b2;
+    --display: 'Fraunces', Georgia, serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+    --sans: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(0,0,0,0.015) 1px, transparent 1px),
+      radial-gradient(circle at 70% 70%, rgba(0,0,0,0.012) 1px, transparent 1px);
+    background-size: 3px 3px, 5px 5px;
+    mix-blend-mode: multiply;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ============= NAVIGATION ============= */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(244, 241, 234, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .nav-mark {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-mark em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .nav-links a {
+    position: relative;
+    padding: 4px 0;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-status {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+  }
+
+  /* ============= HERO ============= */
+  .hero {
+    min-height: 100vh;
+    padding: 140px 40px 80px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .hero-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .hero-meta span strong {
+    display: block;
+    color: var(--ink);
+    font-weight: 600;
+    margin-top: 4px;
+    font-size: 12px;
+  }
+
+  .hero-name {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(64px, 14vw, 220px);
+    line-height: 0.88;
+    letter-spacing: -0.045em;
+    margin-bottom: 30px;
+    font-variation-settings: "opsz" 144;
+  }
+
+  .hero-name .amp {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  .hero-subline {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: end;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .hero-title {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  .hero-title strong {
+    display: block;
+    color: var(--ink);
+    font-size: 14px;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  .hero-pitch {
+    font-family: var(--display);
+    font-size: clamp(20px, 2.2vw, 30px);
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  .hero-pitch em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  /* ============= PILLARS ============= */
+  .pillars {
+    padding: 100px 40px;
+    border-top: 1px solid var(--rule);
+    position: relative;
+    z-index: 2;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .pillar {
+    padding: 40px 40px 40px 0;
+    border-right: 1px solid var(--rule-soft);
+    position: relative;
+  }
+
+  .pillar:first-child { padding-left: 0; }
+  .pillar:not(:first-child) { padding-left: 40px; }
+  .pillar:last-child { border-right: none; padding-right: 0; }
+
+  .pillar-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+  }
+
+  .pillar-title {
+    font-family: var(--display);
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  .pillar-title em {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .pillar-body {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+  }
+
+  .pillar-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    padding: 4px 8px;
+    border: 1px solid var(--rule-soft);
+    color: var(--ink-mute);
+    border-radius: 2px;
+  }
+
+  /* ============= FEATURED PROJECTS ============= */
+  .projects {
+    padding: 100px 40px;
+    border-top: 1px solid var(--rule);
+    position: relative;
+    z-index: 2;
+  }
+
+  .projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .projects-title {
+    font-family: var(--display);
+    font-size: clamp(48px, 7vw, 100px);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+  }
+
+  .projects-title em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  .projects-count {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-mute);
+    text-align: right;
+  }
+
+  .projects-count strong {
+    display: block;
+    color: var(--ink);
+    font-family: var(--display);
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .project-card {
+    padding: 60px 0;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 100px 1fr 1.2fr;
+    gap: 40px;
+    align-items: start;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .project-card:last-child { border-bottom: 1px solid var(--rule); }
+
+  .project-card:hover {
+    background: linear-gradient(to right, transparent, rgba(196, 60, 30, 0.03) 50%, transparent);
+  }
+
+  .project-card:hover .project-arrow {
+    transform: translate(8px, -8px);
+    color: var(--accent);
+  }
+
+  .project-num {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-mute);
+    letter-spacing: 0.1em;
+    padding-top: 8px;
+  }
+
+  .project-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .project-meta > div {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--rule-soft);
+  }
+
+  .project-meta > div:last-child { border-bottom: none; }
+
+  .project-meta strong {
+    color: var(--ink);
+    display: block;
+    font-weight: 500;
+    margin-top: 3px;
+    font-size: 12px;
+  }
+
+  .project-body { position: relative; }
+
+  .project-title {
+    font-family: var(--display);
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .project-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .project-arrow {
+    font-family: var(--display);
+    font-size: 36px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    line-height: 1;
+    color: var(--ink-soft);
+  }
+
+  .project-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+    max-width: 560px;
+  }
+
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  /* ============= WEEKLY WEIGHTS STRIP ============= */
+  .weekly-strip {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 80px 40px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  .weekly-strip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to bottom, transparent 0%, rgba(196, 60, 30, 0.08) 100%);
+    pointer-events: none;
+  }
+
+  .weekly-strip .section-label {
+    color: var(--paper-3);
+  }
+
+  .weekly-strip .section-label::before {
+    background: var(--accent-2);
+  }
+
+  .weekly-hero {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 60px;
+  }
+
+  .weekly-title {
+    font-family: var(--display);
+    font-size: clamp(48px, 8vw, 120px);
+    font-weight: 300;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: var(--paper);
+  }
+
+  .weekly-title em {
+    font-style: italic;
+    color: var(--accent-2);
+    font-weight: 400;
+  }
+
+  .weekly-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--paper-3);
+  }
+
+  .weekly-desc a {
+    color: var(--accent-2);
+    border-bottom: 1px dashed var(--accent-2);
+  }
+
+  .weekly-ticker {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding: 30px 0;
+    border-top: 1px solid rgba(236, 232, 222, 0.1);
+    border-bottom: 1px solid rgba(236, 232, 222, 0.1);
+    scrollbar-width: none;
+  }
+
+  .weekly-ticker::-webkit-scrollbar { display: none; }
+
+  .ticker-item {
+    flex: 0 0 auto;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--paper-3);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ticker-item::after {
+    content: '◆';
+    color: var(--accent-2);
+    font-size: 8px;
+    margin-left: 12px;
+  }
+
+  .ticker-item:last-child::after { display: none; }
+
+  .ticker-item strong {
+    color: var(--paper);
+    font-weight: 500;
+  }
+
+  /* ============= STATS ============= */
+  .stats {
+    padding: 100px 40px;
+    border-top: 1px solid var(--rule);
+    position: relative;
+    z-index: 2;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .stat {
+    padding: 50px 30px;
+    border-right: 1px solid var(--rule-soft);
+    position: relative;
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: var(--display);
+    font-size: clamp(56px, 8vw, 96px);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+
+  .stat-num em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .stat-num sup {
+    font-size: 0.4em;
+    vertical-align: top;
+    color: var(--ink-mute);
+    margin-left: 2px;
+    font-weight: 400;
+  }
+
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-top: 16px;
+    line-height: 1.4;
+  }
+
+  /* ============= DIFFERENTIATOR ============= */
+  .different {
+    padding: 100px 40px;
+    border-top: 1px solid var(--rule);
+    position: relative;
+    z-index: 2;
+  }
+
+  .different-title {
+    font-family: var(--display);
+    font-size: clamp(48px, 7vw, 100px);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    margin-bottom: 80px;
+    max-width: 900px;
+  }
+
+  .different-title em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 40px;
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+  }
+
+  .compare-col h3 {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 30px;
+  }
+
+  .compare-col.me h3 {
+    color: var(--accent);
+  }
+
+  .compare-col ul {
+    list-style: none;
+  }
+
+  .compare-col li {
+    padding: 16px 0;
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    border-bottom: 1px dashed var(--rule-soft);
+    color: var(--ink-soft);
+  }
+
+  .compare-col.me li {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .compare-col.me li em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .compare-divider {
+    width: 1px;
+    background: var(--rule);
+    position: relative;
+  }
+
+  .compare-divider::before {
+    content: 'vs.';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: var(--paper);
+    padding: 8px 12px;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--accent);
+  }
+
+  /* ============= BACKGROUND ============= */
+  .background {
+    padding: 100px 40px;
+    border-top: 1px solid var(--rule);
+    position: relative;
+    z-index: 2;
+    background: var(--paper-2);
+  }
+
+  .background-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+  }
+
+  .background-label {
+    font-family: var(--display);
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .background-label em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .bg-story {
+    font-family: var(--display);
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+    max-width: 680px;
+  }
+
+  .bg-story em {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .bg-story strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .bg-timeline {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    margin-top: 40px;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 40px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .timeline-when {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    padding-top: 4px;
+  }
+
+  .timeline-what {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+
+  .timeline-what strong {
+    display: block;
+    color: var(--ink);
+    font-family: var(--display);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+
+  /* ============= FAQ ============= */
+  .faq {
+    padding: 100px 40px;
+    border-top: 1px solid var(--rule);
+    position: relative;
+    z-index: 2;
+  }
+
+  .faq-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    margin-bottom: 60px;
+    align-items: end;
+  }
+
+  .faq-title {
+    font-family: var(--display);
+    font-size: clamp(48px, 7vw, 100px);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+  }
+
+  .faq-title em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  .faq-sub {
+    font-size: 15px;
+    color: var(--ink-soft);
+    max-width: 480px;
+  }
+
+  details {
+    border-bottom: 1px solid var(--rule);
+    padding: 24px 0;
+  }
+
+  details:first-of-type { border-top: 1px solid var(--rule); }
+
+  summary {
+    font-family: var(--display);
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: color 0.2s;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+
+  summary:hover { color: var(--accent); }
+
+  summary::after {
+    content: '+';
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 32px;
+    color: var(--accent);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+
+  details[open] summary::after {
+    transform: rotate(45deg);
+  }
+
+  details p {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 720px;
+  }
+
+  details p strong { color: var(--ink); font-weight: 500; }
+  details p em { color: var(--accent); font-style: italic; }
+
+  /* ============= CONTACT ============= */
+  .contact {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 120px 40px 60px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  .contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .contact-mega {
+    font-family: var(--display);
+    font-size: clamp(64px, 14vw, 220px);
+    font-weight: 300;
+    line-height: 0.88;
+    letter-spacing: -0.045em;
+    margin-bottom: 60px;
+  }
+
+  .contact-mega em {
+    font-style: italic;
+    color: var(--accent-2);
+    font-weight: 400;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(236, 232, 222, 0.15);
+  }
+
+  .contact-col h4 {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--paper-3);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .contact-col a {
+    display: block;
+    padding: 4px 0;
+    color: var(--paper);
+    transition: color 0.2s;
+    font-size: 15px;
+  }
+
+  .contact-col a:hover { color: var(--accent-2); }
+
+  .contact-col .big-link {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    border-bottom: 1px solid rgba(236, 232, 222, 0.2);
+    padding: 8px 0;
+    word-break: break-all;
+  }
+
+  .contact-foot {
+    margin-top: 80px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(236, 232, 222, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--paper-3);
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  /* ============= RESPONSIVE ============= */
+  @media (max-width: 1024px) {
+    .pillars-grid { grid-template-columns: 1fr; }
+    .pillar { border-right: none; border-bottom: 1px solid var(--rule-soft); padding: 40px 0 !important; }
+    .pillar:last-child { border-bottom: none; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(2) { border-right: none; }
+    .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--rule-soft); }
+    .project-card { grid-template-columns: 1fr; gap: 20px; }
+    .project-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .background-grid, .faq-header, .weekly-hero { grid-template-columns: 1fr; gap: 40px; }
+    .hero-subline { grid-template-columns: 1fr; gap: 20px; }
+    .compare { grid-template-columns: 1fr; }
+    .compare-divider { display: none; }
+    .compare-col.me { border-top: 1px solid var(--rule); padding-top: 30px; }
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .nav-status span:last-child { display: none; }
+    .hero, .pillars, .projects, .stats, .different, .background, .faq { padding-left: 20px; padding-right: 20px; }
+    .weekly-strip, .contact { padding-left: 20px; padding-right: 20px; }
+    .hero-meta { grid-template-columns: 1fr; gap: 12px; padding-bottom: 12px; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .stat { border-right: none; border-bottom: 1px solid var(--rule-soft); }
+    .stat:last-child { border-bottom: none; }
+    .project-meta { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .timeline-item { grid-template-columns: 1fr; gap: 6px; }
+  }
+
+  /* ============= ANIMATION ============= */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-name, .hero-subline { animation: rise 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+  .hero-subline { animation-delay: 0.2s; opacity: 0; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- ============= NAVIGATION ============= -->
+<nav>
+  <a href="#top" class="nav-mark">Bhargavi<em>.</em></a>
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#weekly">Weekly Weights</a>
+    <a href="#about">About</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-status">
+    <span class="status-dot"></span>
+    <span>Open to AI/ML roles</span>
+  </div>
+</nav>
+
+<!-- ============= HERO ============= -->
+<section class="hero" id="top">
+  <div class="hero-meta">
+    <span>Based in<strong>Jersey City / NYC</strong></span>
+    <span>Currently<strong>AI/ML Engineer @ Intuit</strong></span>
+    <span>Previously<strong>Co-founder @ Haber Solutions</strong></span>
+  </div>
+
+  <h1 class="hero-name">Bhargavi<span class="amp">.</span></h1>
+
+  <div class="hero-subline">
+    <div class="hero-title">
+      Role
+      <strong>AI/ML Engineer</strong>
+    </div>
+    <p class="hero-pitch">
+      I build production ML systems from <em>scratch</em>, and ship one in public every week.
+      Co-founder at an industrial AI startup. Currently at Intuit.
+      Looking for an engineering role where the work is tied directly to <em>business value</em>.
+    </p>
+  </div>
+</section>
+
+<!-- ============= PILLARS ============= -->
+<section class="pillars">
+  <div class="section-label"><span>§01 &middot; What I build</span></div>
+  <div class="pillars-grid">
+    <div class="pillar">
+      <div class="pillar-num">/001</div>
+      <h2 class="pillar-title">Generative <em>AI</em></h2>
+      <p class="pillar-body">
+        Production RAG, fine-tuning, and LLM application infrastructure.
+        Hybrid search pipelines, reranking, hallucination detection,
+        cost-aware routing, guardrails. The full stack from prompt to ship.
+      </p>
+      <div class="pillar-tags">
+        <span class="tag">RAG</span>
+        <span class="tag">LoRA / PEFT</span>
+        <span class="tag">DeBERTa</span>
+        <span class="tag">Longformer</span>
+        <span class="tag">Neo4j / GraphRAG</span>
+        <span class="tag">RAGAS</span>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-num">/002</div>
+      <h2 class="pillar-title">Agentic <em>systems</em></h2>
+      <p class="pillar-body">
+        Multi-agent orchestration that actually works in production.
+        Tool-calling, planning loops, async pipelines, human-in-the-loop checkpoints.
+        Shipped for healthcare claims, CPG logistics, and ad creative.
+      </p>
+      <div class="pillar-tags">
+        <span class="tag">LangGraph</span>
+        <span class="tag">Claude / GPT</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">Tool use</span>
+        <span class="tag">Multi-agent</span>
+        <span class="tag">Async pipelines</span>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-num">/003</div>
+      <h2 class="pillar-title">Classical <em>ML</em></h2>
+      <p class="pillar-body">
+        The unsexy foundation that delivers measurable business impact.
+        Forecasting, risk scoring, recommendation systems. Trained, monitored,
+        explained with SHAP, and deployed behind SLAs.
+      </p>
+      <div class="pillar-tags">
+        <span class="tag">XGBoost</span>
+        <span class="tag">LightGBM</span>
+        <span class="tag">Prophet / ARIMA</span>
+        <span class="tag">Optuna</span>
+        <span class="tag">MLflow</span>
+        <span class="tag">SHAP</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= PROJECTS ============= -->
+<section class="projects" id="work">
+  <div class="projects-header">
+    <h2 class="projects-title">Selected <em>work.</em></h2>
+    <div class="projects-count">
+      <strong>12+</strong>
+      <span>Production-grade projects<br>shipped since Jan 2026</span>
+    </div>
+  </div>
+
+  <!-- Project 01: Creative IQ -->
+  <article class="project-card" onclick="window.open('https://github.com/Bhargavi2212', '_blank')">
+    <div class="project-num">/01</div>
+    <div class="project-meta">
+      <div>Category<strong>Agentic AI &middot; AdTech</strong></div>
+      <div>Role<strong>Core engineer</strong></div>
+      <div>Status<strong>Active &middot; in production</strong></div>
+      <div>Stack<strong>Terraform &middot; EKS &middot; GitHub Actions</strong></div>
+    </div>
+    <div class="project-body">
+      <h3 class="project-title">
+        <span>Creative <em>IQ</em></span>
+        <span class="project-arrow">&rarr;</span>
+      </h3>
+      <p class="project-desc">
+        Agentic video editor for enterprise ad teams spending $50M+ on creative annually.
+        Orchestrates video, image, and audio models into a single async pipeline that generates,
+        edits, and optimizes ad variations end-to-end, with brand-guideline enforcement and
+        a performance feedback loop that closes the gap between analytics and the next creative.
+      </p>
+      <div class="project-stack">
+        <span class="tag">Multi-agent orchestration</span>
+        <span class="tag">Sora / Runway / Kling</span>
+        <span class="tag">Async pipelines</span>
+        <span class="tag">Brand compliance ML</span>
+        <span class="tag">AWS EKS</span>
+        <span class="tag">Terraform IaC</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Project 02: AuthLookup -->
+  <article class="project-card" onclick="window.open('https://github.com/Bhargavi2212', '_blank')">
+    <div class="project-num">/02</div>
+    <div class="project-meta">
+      <div>Category<strong>GenAI &middot; Healthcare</strong></div>
+      <div>Role<strong>Solo build</strong></div>
+      <div>Status<strong>Shipped &middot; documented</strong></div>
+      <div>Stack<strong>Neo4j &middot; LangChain &middot; FastAPI</strong></div>
+    </div>
+    <div class="project-body">
+      <h3 class="project-title">
+        <span>Auth<em>Lookup</em></span>
+        <span class="project-arrow">&rarr;</span>
+      </h3>
+      <p class="project-desc">
+        GraphRAG upgrade for healthcare prior authorization. Traditional vector RAG loses
+        the relationships between payers, plans, procedures, and policy rules, which
+        is exactly where denials hide. Built on Neo4j with hybrid retrieval and a reranker,
+        AuthLookup traces the full policy graph before answering, cutting hallucinated
+        justifications in authorization workflows.
+      </p>
+      <div class="project-stack">
+        <span class="tag">GraphRAG</span>
+        <span class="tag">Neo4j</span>
+        <span class="tag">Hybrid retrieval</span>
+        <span class="tag">Cross-encoder reranker</span>
+        <span class="tag">Prior authorization</span>
+        <span class="tag">LangChain</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Project 03: FreshFlow -->
+  <article class="project-card" onclick="window.open('https://github.com/Bhargavi2212', '_blank')">
+    <div class="project-num">/03</div>
+    <div class="project-meta">
+      <div>Category<strong>Agentic AI &middot; CPG</strong></div>
+      <div>Role<strong>Team of 5 &middot; Amazon Nova Hackathon</strong></div>
+      <div>Status<strong>Shipped &middot; demo'd</strong></div>
+      <div>Stack<strong>Amazon Nova &middot; Python &middot; Streamlit</strong></div>
+    </div>
+    <div class="project-body">
+      <h3 class="project-title">
+        <span>Fresh<em>Flow AI</em></span>
+        <span class="project-arrow">&rarr;</span>
+      </h3>
+      <p class="project-desc">
+        Multi-agent platform for food distributors coordinating perishable inventory
+        across suppliers, warehouses, and retailers. Agents handle demand forecasting,
+        spoilage risk scoring, and rerouting negotiations, turning a manual phone-tree
+        operation into a continuously re-planning system. Built in 72 hours with a team of five.
+      </p>
+      <div class="project-stack">
+        <span class="tag">Amazon Nova</span>
+        <span class="tag">Multi-agent</span>
+        <span class="tag">Demand forecasting</span>
+        <span class="tag">Supply-chain ML</span>
+        <span class="tag">Streamlit</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Project 04: Context Engine -->
+  <article class="project-card" onclick="window.open('https://github.com/Bhargavi2212', '_blank')">
+    <div class="project-num">/04</div>
+    <div class="project-meta">
+      <div>Category<strong>GenAI &middot; Product Intelligence</strong></div>
+      <div>Role<strong>Solo build &middot; Mistral Hackathon</strong></div>
+      <div>Status<strong>v2 &middot; shipped</strong></div>
+      <div>Stack<strong>Mistral &middot; LangGraph &middot; PostgreSQL</strong></div>
+    </div>
+    <div class="project-body">
+      <h3 class="project-title">
+        <span>Context <em>Engine</em></span>
+        <span class="project-arrow">&rarr;</span>
+      </h3>
+      <p class="project-desc">
+        PM feedback intelligence platform. Ingests raw user feedback from every channel,
+        support tickets, reviews, Slack, call transcripts, and builds a persistent context
+        graph that answers "what are users really saying about feature X?" with cited evidence.
+        v2 rebuilt with LangGraph for agentic retrieval and evidence-chained reasoning.
+      </p>
+      <div class="project-stack">
+        <span class="tag">LangGraph</span>
+        <span class="tag">Mistral</span>
+        <span class="tag">Evidence-chained RAG</span>
+        <span class="tag">Topic modeling</span>
+        <span class="tag">PostgreSQL + pgvector</span>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ============= WEEKLY WEIGHTS ============= -->
+<section class="weekly-strip" id="weekly">
+  <div class="section-label"><span>§02 &middot; Build in public</span></div>
+
+  <div class="weekly-hero">
+    <h2 class="weekly-title">Weekly <em>Weights.</em></h2>
+    <p class="weekly-desc">
+      One production-grade AI/ML project, shipped every week, documented in public.
+      Because the best way to stay sharp is to ship, not to read about shipping.
+      Follow the run on <a href="https://www.linkedin.com/in/weekly-weights-3a729a3a4/" target="_blank">LinkedIn</a>
+      and <a href="https://github.com/Bhargavi2212" target="_blank">GitHub</a>.
+    </p>
+  </div>
+
+  <div class="weekly-ticker">
+    <span class="ticker-item"><strong>Wk 14</strong> JobHunter AI</span>
+    <span class="ticker-item"><strong>Wk 13</strong> AuthLookup &middot; GraphRAG</span>
+    <span class="ticker-item"><strong>Wk 12</strong> Medi-Flow &middot; claim-denial agents</span>
+    <span class="ticker-item"><strong>Wk 11</strong> HeartNet</span>
+    <span class="ticker-item"><strong>Wk 10</strong> Movie Recommender &middot; hybrid</span>
+    <span class="ticker-item"><strong>Wk 09</strong> Credit Risk &middot; XGBoost + SHAP</span>
+    <span class="ticker-item"><strong>Wk 08</strong> Demand Forecasting Ensemble</span>
+    <span class="ticker-item"><strong>Wk 07</strong> Mini-Pandas from scratch</span>
+  </div>
+</section>
+
+<!-- ============= STATS ============= -->
+<section class="stats">
+  <div class="section-label"><span>§03 &middot; By the numbers</span></div>
+  <div class="stats-grid">
+    <div class="stat">
+      <div class="stat-num"><em>12</em><sup>+</sup></div>
+      <div class="stat-label">Production-grade<br>projects shipped</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">5<sup>yrs</sup></div>
+      <div class="stat-label">Shipping ML at<br>founding-team scale</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">4<sup>+</sup></div>
+      <div class="stat-label">Hackathons<br>in 2026 alone</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">0<sup>&rarr;1</sup></div>
+      <div class="stat-label">ML infra built<br>from scratch, twice</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= DIFFERENTIATOR ============= -->
+<section class="different">
+  <h2 class="different-title">Real different. <em>No cap.</em></h2>
+
+  <div class="compare">
+    <div class="compare-col other">
+      <h3>Most ML engineers</h3>
+      <ul>
+        <li>Tune hyperparameters on someone else's dataset.</li>
+        <li>Wait for the data team to unblock them.</li>
+        <li>Ship a notebook, call it done.</li>
+        <li>Confuse "I read the paper" with "I built it."</li>
+        <li>Treat production as someone else's problem.</li>
+        <li>Optimize for the metric on the deck.</li>
+        <li>Hand off to the platform team.</li>
+        <li>Pick the boring, safe model.</li>
+      </ul>
+    </div>
+
+    <div class="compare-divider"></div>
+
+    <div class="compare-col me">
+      <h3>Me</h3>
+      <ul>
+        <li>Built the <em>data pipeline</em> that makes tuning possible.</li>
+        <li>Built the data team <em>I needed</em>, at two startups.</li>
+        <li>Ship FastAPI + Docker + <em>monitoring</em>, or I'm not done.</li>
+        <li>Wrote a transformer from scratch to know <em>exactly</em> how it breaks.</li>
+        <li>Production is the <em>whole job</em>. Notebooks are scratch paper.</li>
+        <li>Optimize for the metric that <em>moves revenue</em>.</li>
+        <li>Be the <em>platform team</em> until there's one to hand off to.</li>
+        <li>Pick the model that <em>wins</em>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============= BACKGROUND ============= -->
+<section class="background" id="about">
+  <div class="background-grid">
+    <div>
+      <div class="section-label"><span>§04 &middot; Background</span></div>
+      <h2 class="background-label">How I got <em>here.</em></h2>
+    </div>
+
+    <div>
+      <p class="bg-story">
+        Most ML engineers learn on pre-cleaned datasets.
+        My first ML job was as a <strong>co-founder at Haber Solutions</strong>,
+        where "the data pipeline" meant writing one, and "the model serving infra" meant
+        building it. We scaled the company <em>significantly</em>, and I shipped predictive
+        models that moved real revenue.
+      </p>
+
+      <p class="bg-story">
+        I then picked up an <strong>MSBA from UCLA Anderson</strong> to sharpen the
+        business side, and joined <strong>Intuit</strong> to learn what ML looks like
+        at scale. Now I'm <em>deliberately</em> building toward the next thing,
+        shipping Weekly Weights, advising <strong>Ritwit</strong>, organizing the
+        ASAN Boston hackathon, and looking for an engineering role where ML
+        is tied directly to <em>business value</em>.
+      </p>
+
+      <div class="bg-timeline">
+        <div class="timeline-item">
+          <div class="timeline-when">Now</div>
+          <div class="timeline-what">
+            <strong>AI/ML Engineer &middot; Intuit</strong>
+            Production ML at scale. Shipping Weekly Weights in parallel.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-when">Advising</div>
+          <div class="timeline-what">
+            <strong>Founder / Advisor &middot; Ritwit</strong>
+            Vertically integrated wellness-grocery platform targeting Hyderabad.
+            10 AI agents, HPLC lab testing, family health tracking.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-when">Before</div>
+          <div class="timeline-what">
+            <strong>MSBA &middot; UCLA Anderson</strong>
+            Business analytics to pair with the engineering.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-when">Origin</div>
+          <div class="timeline-what">
+            <strong>Co-founder &middot; Haber Solutions</strong>
+            Built ML infrastructure from scratch. Scaled with the company.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-when">Community</div>
+          <div class="timeline-what">
+            <strong>Organizer &middot; ASAN (American South Asian Network)</strong>
+            Running the Boston AI hackathon for BOSTechWeek. Events across LA, Austin, NYC.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= FAQ ============= -->
+<section class="faq" id="faq">
+  <div class="faq-header">
+    <h2 class="faq-title">Quick <em>answers.</em></h2>
+    <p class="faq-sub">
+      The things recruiters and founders usually want to know before the first call.
+      If yours isn't here, just email me. I reply fast.
+    </p>
+  </div>
+
+  <details open>
+    <summary>What are you looking for?</summary>
+    <p>
+      An <strong>AI/ML engineering role at a startup</strong> solving
+      a genuinely hard problem, ideally healthcare AI, agentic systems, or AI-native
+      vertical SaaS. The kind of role where I own ML from <em>the data pipeline to production</em>,
+      and where the work is tied directly to <em>business value</em>, not benchmarks on a slide.
+    </p>
+  </details>
+
+  <details>
+    <summary>Remote, hybrid, or in-person?</summary>
+    <p>
+      I'm based in Jersey City, so <strong>NYC in-person or hybrid is ideal</strong>.
+      Open to remote for the right team. Willing to relocate for the right seat,
+      San Francisco, Boston, or remote-first teams all on the table.
+    </p>
+  </details>
+
+  <details>
+    <summary>What stack do you reach for?</summary>
+    <p>
+      <strong>Python / FastAPI / Docker</strong> for services.
+      <strong>PyTorch + Hugging Face + LangGraph</strong> for ML and agents.
+      <strong>PostgreSQL + pgvector + Neo4j</strong> for storage depending on the retrieval shape.
+      <strong>Terraform + GitHub Actions + EKS or Cloud Run</strong> for deploy.
+      <strong>Prometheus + Grafana + Evidently</strong> for monitoring.
+      That said, I'll happily learn the stack you're already on. The stack is a detail; the shipping is the job.
+    </p>
+  </details>
+
+  <details>
+    <summary>When can you start?</summary>
+    <p>
+      Standard two weeks from signed offer.
+      Happy to scope a <strong>paid trial project</strong> first if that's useful.
+      I'll ship something real in a week so you can see how I work before we commit.
+    </p>
+  </details>
+
+  <details>
+    <summary>Are you currently interviewing elsewhere?</summary>
+    <p>
+      I run a small, focused pipeline of early-stage AI companies at any given time.
+      If you're interested, move fast. I'd rather commit to the right team than
+      sit in a long process.
+    </p>
+  </details>
+</section>
+
+<!-- ============= CONTACT ============= -->
+<section class="contact" id="contact">
+  <h2 class="contact-mega">Let's <em>ship.</em></h2>
+
+  <div class="contact-grid">
+    <div class="contact-col">
+      <h4>Direct</h4>
+      <a href="mailto:bhargavinallapuneni2001@gmail.com" class="big-link">bhargavinallapuneni2001<br>@gmail.com</a>
+      <p style="color: var(--paper-3); font-size: 13px; margin-top: 12px;">
+        Best way to reach me. I reply within 24 hours, usually much faster.
+      </p>
+    </div>
+
+    <div class="contact-col">
+      <h4>Code</h4>
+      <a href="https://github.com/Bhargavi2212" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/weekly-weights-3a729a3a4/" target="_blank">Weekly Weights</a>
+    </div>
+
+    <div class="contact-col">
+      <h4>Network</h4>
+      <a href="https://www.linkedin.com/in/bhargavi-nallapuneni/" target="_blank">LinkedIn</a>
+    </div>
+
+    <div class="contact-col">
+      <h4>Availability</h4>
+      <a href="https://calendly.com/bhargavinallapuneni2001" target="_blank">Book a 30-min call</a>
+    </div>
+  </div>
+
+  <div class="contact-foot">
+    <div>Bhargavi Nallapuneni &middot; Jersey City, NY &middot; &copy; 2026</div>
+    <div>Built on a Tuesday. Shipped the same day.</div>
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.pillar, .project-card, .stat, .timeline-item, details, .compare-col').forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
