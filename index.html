@@ -182,8 +182,8 @@
   /* MODAL */
   .modal-overlay { position: fixed; inset: 0; z-index: 200; background: rgba(20, 20, 20, 0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
   .modal-overlay.active { opacity: 1; pointer-events: auto; }
-  .modal { position: fixed; top: 0; right: 0; bottom: 0; width: min(1100px, 100vw); background: var(--paper); z-index: 201; transform: translateX(100%); transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); overflow-y: auto; overflow-x: hidden; box-shadow: -20px 0 60px rgba(0,0,0,0.3); }
-  .modal.active { transform: translateX(0); }
+  .modal { position: fixed; top: 0; right: 0; bottom: 0; width: min(1100px, 100vw); background: var(--paper); z-index: 201; transform: translateX(100%); transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s 0.5s; overflow-y: auto; overflow-x: hidden; box-shadow: none; visibility: hidden; }
+  .modal.active { transform: translateX(0); box-shadow: -20px 0 60px rgba(0,0,0,0.3); visibility: visible; transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s 0s; }
   .modal-close { position: sticky; top: 20px; margin-left: auto; width: 44px; height: 44px; background: var(--paper); border: 1px solid var(--rule); font-family: var(--display); font-size: 22px; font-weight: 300; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; z-index: 10; border-radius: 50%; margin-right: 30px; margin-top: 20px; color: var(--ink); }
   .modal-close:hover { background: var(--accent); color: var(--paper); border-color: var(--accent); transform: rotate(90deg); }
   .modal-inner { padding: 0 60px 80px; max-width: 900px; margin: -44px auto 0; }
